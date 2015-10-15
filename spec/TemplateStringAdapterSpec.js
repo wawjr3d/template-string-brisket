@@ -36,12 +36,12 @@ describe("TemplateStringAdapter", function() {
 
             templateAdapter: TemplateStringAdapter,
 
-            template: ({ modelKey, logicKey }) => {
-                return `<span class="test">model: ${modelKey}, logic: ${logicKey}</span>`
-            },
-
             logic() {
                 return { "logicKey": "logic-value" };
+            },
+
+            template: ({ modelKey, logicKey }) => {
+                return `<span class="test">model: ${modelKey}, logic: ${logicKey}</span>`
             }
 
         });
