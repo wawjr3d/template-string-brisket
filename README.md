@@ -11,12 +11,12 @@ const ExampleView = View.extend({
 
     templateAdapter: TemplateStringAdapter,
 
-    template: ({ modelHello, hello }) => {
-        return `<span>model: ${modelHello}, logic: ${hello}</span>`
-    },
-
     logic() {
         return { "hello": "world" };
+    },
+
+    template: ({ modelHello, hello }) => {
+        return `<span>model: ${modelHello}, logic: ${hello}</span>`
     }
 
 });
