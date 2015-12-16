@@ -12,7 +12,26 @@ describe("TemplateStringAdapter", function() {
         Testing.setup();
     });
 
-    it("renders template string as a string", function() {
+    it("renders template string directly", function() {
+        const SOME_LOCAL_CONSTANT = "slc";
+
+        ExampleView = View.extend({
+
+            templateAdapter: TemplateStringAdapter,
+
+            template: `<span class='test'>${SOME_LOCAL_CONSTANT}</span>`
+
+        });
+
+        view = new ExampleView();
+
+        view.render();
+
+        expect(view.el.innerHTML)
+            .to.equal('<span class="test">slc</span>');
+    });
+
+    it("renders template string function as a string", function() {
         ExampleView = View.extend({
 
             templateAdapter: TemplateStringAdapter,
@@ -31,7 +50,7 @@ describe("TemplateStringAdapter", function() {
             .to.equal('<span class="test">I should be rendered</span>');
     });
 
-    it("passes view data to template string as a string", function() {
+    it("passes view data to template string function as a string", function() {
         ExampleView = View.extend({
 
             templateAdapter: TemplateStringAdapter,

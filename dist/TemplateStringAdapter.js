@@ -9,6 +9,10 @@ var _brisket = require("brisket");
 var TemplateStringAdapter = _brisket.Templating.TemplateAdapter.extend({
 
     templateToHTML: function templateToHTML(template, data) {
+        if (typeof template !== "function") {
+            return template;
+        }
+
         return template(data);
     }
 

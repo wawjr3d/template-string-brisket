@@ -1,6 +1,6 @@
 {
   "name": "template-string-brisket",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Brisket TemplateAdapter for using template strings",
   "main": "dist/TemplateStringAdapter.js",
   "scripts": {
