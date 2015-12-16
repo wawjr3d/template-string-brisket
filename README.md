@@ -27,3 +27,22 @@ model.set("modelHello", "modelWorld");
 const view = new View({ model });
 view.render().el.innerHTML // "<span>model: modelWorld, logic: world</span>"
 ```
+
+OR with simple strings
+
+```js
+import TemplateStringAdapter from "template-string-brisket";
+import { View } from "brisket";
+
+const SOME_LOCAL_CONTENT = "slc";
+
+const ExampleView = View.extend({
+
+    templateAdapter: TemplateStringAdapter,
+
+    template: `<span>${SOME_LOCAL_CONTENT}</span>`
+
+});
+
+view.render().el.innerHTML // "<span>slc</span>"
+```
