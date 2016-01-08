@@ -1,6 +1,8 @@
 # template-string-brisket
 Brisket TemplateAdapter for using template strings
 
+***This isn't really needed anymore since Brisket is doing this by default now***
+
 ## Usage
 
 ```js
